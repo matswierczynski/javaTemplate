@@ -1,4 +1,4 @@
-export function AsyncApiController(params) {
+export function AsyncApiController() {
     return `
 
 import javax.ws.rs.GET;

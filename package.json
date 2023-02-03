@@ -67,36 +67,19 @@
     ]
   },
   "generator": {
+    "renderer": "react",
     "parameters": {
       "sidebarOrganization": {
         "description": "Defines how the sidebar should be organized. 'byTags' to categorize operations by tags in the root of the document, `byTagsNoRoot` does the same but for pub/sub tags.",
-        "required": false
-      },
-      "baseHref": {
-        "description": "Sets the base URL for links and forms.",
         "required": false
       },
       "version": {
         "description": "Override the version of your application provided under `info.version` location in the specification file.",
         "required": false
       },
-      "singleFile": {
-        "description": "If set this parameter to true generate single html file with scripts and styles inside",
-        "required": false,
-        "default": false
-      },
       "outFilename": {
         "description": "The name of the output HTML file",
         "default": "index.html",
-        "required": false
-      },
-      "pdf": {
-        "description": "Set to `true` to get index.pdf generated next to your index.html",
-        "default": false
-      },
-      "pdfTimeout": {
-        "description": "The timeout (in ms) used to generate the pdf",
-        "default": 30000,
         "required": false
       },
       "favicon": {
