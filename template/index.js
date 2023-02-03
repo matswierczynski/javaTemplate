@@ -16,8 +16,9 @@ export default function({ asyncapi, params }) {
             <HTML>
                 <Head
                     title={`${asyncapi.info().title()} ${asyncapi.info().version()} documentation`}
-                    cssLinks={'css/global.min.css'}
-                    styleContent={includeFile('template/css/asyncapi.min.css')}
+                    cssLinks={['css/global.min.css', 'css/asyncapi.min.css']}
+                    styleContent={[]}
+                    base={""}
                 />
                 <Body>
                     {`<div id="root">${renderSpec(asyncapi,params)}</div>`}
