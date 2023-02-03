@@ -1,10 +1,16 @@
 import { File, Text } from "@asyncapi/generator-react-sdk";
 
-export default function({ asyncapi, params, originalAsyncAPI }) {
+import { PackageDeclaration } from '../components/Common';
+import { javaPackageToPath } from '../utils/String.utils';
+import { AsyncApiController } from '../components/AsyncApiController';
+
+export default function({ asyncapi, params }) {
+    const filePath = `${javaPackageToPath(params.package)}`;
+    const pkg = `${params.package}`;
     return (
-        <File name="asyncapi.md">
-            <Text>My application's markdown file.</Text>
-            <Text>App name: **{ asyncapi.info().title() }**</Text>
+        <File name={filePath}>
+            <PackageDeclaration path={pkg} />
+            <AsyncApiController />
         </File>
     );
 }

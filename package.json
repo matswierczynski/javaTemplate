@@ -1,7 +1,14 @@
 {
   "name": "myTemplate",
   "generator": {
-    "renderer": "react"
+    "renderer": "react",
+    "parameters": {
+      "package": {
+        "description": "Package name",
+        "required": false,
+        "default": "com.asyncapi"
+      }
+    }
   },
   "dependencies": {
     "@asyncapi/generator-react-sdk": "^0.2.25"
