@@ -1,12 +1,13 @@
+import { File } from '@asyncapi/generator-react-sdk';
+
 import { AsyncApiController } from '../components/AsyncApiController';
+import { javaPackageToPath } from '../utils/String.utils';
 
-export default function({ asyncapi, params }) {
-    const toRender = {
-        controller: AsyncApiController(params)
-    };
-
-    // Schemas is an instance of the Map
-    return Object.entries(toRender).map(([name, renderFunction]) => {
-        return renderFunction;
-    }).flat();
+export default function({ params }) {
+    const filePath = `${javaPackageToPath(params.package)}AsyncApiController.java`;
+    return (
+        <File name={filePath}>
+            <AsyncApiController />
+        </File>
+    );
 }

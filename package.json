@@ -2,7 +2,7 @@
   "name": "template-for-generator-templates",
   "version": "0.0.1",
   "description": "Template for generator templates to make it much easier to start writing your own generator template",
-  "main": "index.js",
+  "main": "template/index.js",
   "scripts": {
     "test": "npm run testTemplate && npm run testHooks && npm run testFilters && npm run testComponents",
     "testTemplate": "rimraf test/temp && jest --coverage -t 'templateGenerationResult'",
@@ -36,6 +36,7 @@
   "dependencies": {
     "@asyncapi/parser": "^1.17.0",
     "@asyncapi/react-component": "^1.0.0-next.47",
+    "@asyncapi/generator-hooks": "^0.1.0",
     "highlight.js": "10.7.3",
     "node-fetch": "^2.6.7",
     "puppeteer": "^14.1.0",
@@ -82,10 +83,6 @@
         "description": "Defines how the sidebar should be organized. 'byTags' to categorize operations by tags in the root of the document, `byTagsNoRoot` does the same but for pub/sub tags.",
         "required": false
       },
-      "baseHref": {
-        "description": "Sets the base URL for links and forms.",
-        "required": false
-      },
       "version": {
         "description": "Override the version of your application provided under `info.version` location in the specification file.",
         "required": false
@@ -128,7 +125,10 @@
     "generator": ">=1.9.12 <2.0.0",
     "nonRenderableFiles": [
       "js/asyncapi-ui.min.js"
-    ]
+    ],
+    "hooks": {
+      "@asyncapi/generator-hooks": "createAsyncapiFile"
+    }
   },
   "jest": {
     "transform": {
